@@ -47,7 +47,7 @@ const MovieModal = ({ movie, isOpen, onClose, language, onAddToWatchlist, onRemo
             animate="animate"
             exit="exit"
             onClick={onClose}
-            className="fixed inset-0 bg-black/80 backdrop-blur-sm z-40"
+            className="fixed inset-0 bg-black/80 backdrop-blur-sm z-40 flex items-center justify-center"
           />
 
           {/* Modal */}
@@ -56,7 +56,7 @@ const MovieModal = ({ movie, isOpen, onClose, language, onAddToWatchlist, onRemo
             initial="initial"
             animate="animate"
             exit="exit"
-            className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-50 w-full max-w-2xl mx-auto"
+            className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-50 w-11/12 sm:w-full max-w-3xl max-h-[90vh] overflow-y-auto"
           >
             <div className="bg-gradient-to-br from-gray-900 to-gray-950 rounded-2xl overflow-hidden shadow-2xl border border-gray-700/50">
               {/* Close Button */}
