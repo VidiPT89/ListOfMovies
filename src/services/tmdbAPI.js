@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_KEY = 'e4f451098f68b2b2d2ad9f82a0e42e96'; // Chave gratuita para demo (considere usar variáveis de ambiente)
+const API_KEY = 'b7df574d2832eab43d277c7eaea4b6a3';
 const BASE_URL = 'https://api.themoviedb.org/3';
 const IMAGE_BASE_URL = 'https://image.tmdb.org/t/p/w500';
 
