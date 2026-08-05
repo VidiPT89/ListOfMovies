@@ -23,7 +23,7 @@ const SplashScreen = ({ onAnimationComplete, language }) => {
     <div className="fixed inset-0 bg-gradient-to-br from-gray-950 via-gray-900 to-black flex items-center justify-center z-50">
       {/* Animated Background Orbs */}
       <motion.div
-        className="absolute w-96 h-96 bg-purple-600 rounded-full blur-3xl opacity-20"
+        className="absolute w-96 h-96 bg-orange-600 rounded-full blur-3xl opacity-20"
         animate={{
           x: [0, 30, 0],
           y: [0, -30, 0],
@@ -40,7 +40,7 @@ const SplashScreen = ({ onAnimationComplete, language }) => {
       />
 
       <motion.div
-        className="absolute w-96 h-96 bg-cyan-600 rounded-full blur-3xl opacity-20"
+        className="absolute w-96 h-96 bg-amber-500 rounded-full blur-3xl opacity-20"
         animate={{
           x: [0, -30, 0],
           y: [0, 30, 0],
@@ -81,10 +81,10 @@ const SplashScreen = ({ onAnimationComplete, language }) => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-          <p className="text-lg text-cyan-400 font-light tracking-widest uppercase mb-3">
+          <p className="text-lg text-amber-300 font-light tracking-widest uppercase mb-3">
             {getTranslation(language, 'splashWelcome')}
           </p>
-          <h1 className="text-6xl md:text-7xl font-bold bg-gradient-to-r from-purple-400 via-pink-400 to-cyan-400 bg-clip-text text-transparent mb-4">
+          <h1 className="text-6xl md:text-7xl font-bold bg-gradient-to-r from-orange-400 via-amber-300 to-orange-500 bg-clip-text text-transparent mb-4">
             {getTranslation(language, 'header')}
           </h1>
           <p className="text-gray-300 text-xl md:text-2xl font-light">
@@ -97,7 +97,7 @@ const SplashScreen = ({ onAnimationComplete, language }) => {
           initial={{ width: 0 }}
           animate={{ width: '100px' }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="h-1 bg-gradient-to-r from-purple-500 to-cyan-500 mx-auto my-8 rounded-full"
+          className="h-1 bg-gradient-to-r from-orange-500 to-amber-400 mx-auto my-8 rounded-full"
         />
 
         {/* Credits */}
@@ -115,7 +115,7 @@ const SplashScreen = ({ onAnimationComplete, language }) => {
               href="https://ividi.dev/"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-purple-400 transition-colors"
+              className="hover:text-orange-400 transition-colors"
             >
               🌐 ividi.dev
             </a>
@@ -123,7 +123,7 @@ const SplashScreen = ({ onAnimationComplete, language }) => {
               href="https://github.com/VidiPT89/"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-purple-400 transition-colors"
+              className="hover:text-orange-400 transition-colors"
             >
               💻 GitHub
             </a>
@@ -146,11 +146,11 @@ const SplashScreen = ({ onAnimationComplete, language }) => {
               repeat: Infinity,
               ease: 'linear',
             }}
-            className="w-full h-full border-3 border-transparent border-t-purple-500 border-r-cyan-500 rounded-full"
+            className="w-full h-full border-3 border-transparent border-t-orange-500 border-r-amber-400 rounded-full"
           />
         </div>
         <motion.div
-          className="h-1 bg-gradient-to-r from-purple-500 via-pink-500 to-cyan-500 mx-auto"
+          className="h-1 bg-gradient-to-r from-orange-500 via-amber-400 to-orange-600 mx-auto"
           initial={{ width: 0 }}
           animate={{ width: '100%' }}
           transition={{

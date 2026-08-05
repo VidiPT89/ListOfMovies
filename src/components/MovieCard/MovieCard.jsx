@@ -49,7 +49,7 @@ const MovieCard = ({ movie, onAddToWatchlist, onRemoveFromWatchlist, isInWatchli
             animate={{ opacity: 1, x: 0 }}
             className="absolute top-3 left-3"
           >
-            <span className="badge bg-gradient-to-r from-blue-500 to-cyan-500 text-white px-3 py-1 rounded-full text-xs font-bold shadow-lg">
+            <span className="badge bg-gradient-to-r from-amber-500 to-amber-400 text-white px-3 py-1 rounded-full text-xs font-bold shadow-lg">
               👁️ {getTranslation(language, 'watched')}
             </span>
           </motion.div>
@@ -90,7 +90,7 @@ const MovieCard = ({ movie, onAddToWatchlist, onRemoveFromWatchlist, isInWatchli
                 onClick={() => onToggleWatched()}
                 className={`w-full py-2 px-4 rounded-lg font-semibold transition-all duration-200 ${
                   watched
-                    ? 'bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white shadow-lg'
+                    ? 'bg-gradient-to-r from-orange-600 to-amber-500 hover:from-orange-700 hover:to-amber-600 text-white shadow-lg'
                     : 'bg-gradient-to-r from-gray-700 to-gray-600 hover:from-gray-600 hover:to-gray-500 text-white'
                 }`}
               >

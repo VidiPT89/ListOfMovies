@@ -36,7 +36,7 @@ const SearchBar = ({ onSearch, isLoading, language }) => {
             onFocus={() => setIsFocused(true)}
             onBlur={() => setIsFocused(false)}
             placeholder={getTranslation(language, 'searchPlaceholder')}
-            className="w-full px-6 py-4 bg-gray-800/50 text-white rounded-xl border-2 border-gray-700/50 focus:outline-none focus:border-purple-500 transition-all duration-300 placeholder-gray-500 font-medium"
+            className="w-full px-6 py-4 bg-gray-800/50 text-white rounded-xl border-2 border-gray-700/50 focus:outline-none focus:border-orange-500 transition-all duration-300 placeholder-gray-500 font-medium"
           />
         </motion.div>
         <motion.button

@@ -157,7 +157,7 @@ function App() {
             className="text-center mb-10"
           >
             <motion.h1
-              className="text-5xl md:text-7xl font-bold mb-3 bg-gradient-to-r from-purple-400 via-pink-400 to-cyan-400 bg-clip-text text-transparent"
+              className="text-5xl md:text-7xl font-bold mb-3 bg-gradient-to-r from-orange-400 via-amber-300 to-orange-500 bg-clip-text text-transparent"
             >
               🎬 {getTranslation(language, 'header')}
             </motion.h1>
@@ -184,7 +184,7 @@ function App() {
               onClick={() => setCurrentView('search')}
               className={`px-6 md:px-8 py-3 rounded-xl font-semibold transition-all duration-300 ${
                 currentView === 'search'
-                  ? 'bg-gradient-to-r from-purple-600 to-cyan-600 text-white shadow-lg shadow-purple-500/50'
+                  ? 'bg-gradient-to-r from-orange-600 to-amber-500 text-white shadow-lg shadow-orange-500/50'
                   : 'bg-gray-800/50 text-gray-300 hover:bg-gray-700/50 border border-gray-700/50'
               }`}
             >
@@ -196,7 +196,7 @@ function App() {
               onClick={() => setCurrentView('watchlist')}
               className={`px-6 md:px-8 py-3 rounded-xl font-semibold transition-all duration-300 relative ${
                 currentView === 'watchlist'
-                  ? 'bg-gradient-to-r from-purple-600 to-cyan-600 text-white shadow-lg shadow-purple-500/50'
+                  ? 'bg-gradient-to-r from-orange-600 to-amber-500 text-white shadow-lg shadow-orange-500/50'
                   : 'bg-gray-800/50 text-gray-300 hover:bg-gray-700/50 border border-gray-700/50'
               }`}
             >

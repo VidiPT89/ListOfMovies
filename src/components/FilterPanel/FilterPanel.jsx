@@ -21,7 +21,7 @@ const FilterPanel = ({ onFilterChange, genres, selectedGenre, selectedYear, lang
       transition={{ duration: 0.5, delay: 0.1 }}
       className="bg-gradient-to-r from-gray-900/80 to-gray-800/80 backdrop-blur-md p-6 rounded-xl mb-8 border border-gray-700/50 shadow-xl"
     >
-      <h2 className="text-2xl font-bold mb-6 bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">
+      <h2 className="text-2xl font-bold mb-6 bg-gradient-to-r from-orange-400 to-amber-300 bg-clip-text text-transparent">
         {getTranslation(language, 'filters')}
       </h2>
       
@@ -38,7 +38,7 @@ const FilterPanel = ({ onFilterChange, genres, selectedGenre, selectedYear, lang
           <select
             value={selectedGenre || 'all'}
             onChange={(e) => handleGenreChange(e.target.value)}
-            className="w-full px-4 py-3 bg-gray-800/50 text-white rounded-lg border-2 border-gray-700/50 focus:outline-none focus:border-purple-500 transition-all duration-300 font-medium cursor-pointer"
+            className="w-full px-4 py-3 bg-gray-800/50 text-white rounded-lg border-2 border-gray-700/50 focus:outline-none focus:border-orange-500 transition-all duration-300 font-medium cursor-pointer"
           >
             <option value="all">{getTranslation(language, 'allGenres')}</option>
             {genres.map(genre => (
@@ -61,7 +61,7 @@ const FilterPanel = ({ onFilterChange, genres, selectedGenre, selectedYear, lang
           <select
             value={selectedYear || 'all'}
             onChange={(e) => handleYearChange(e.target.value)}
-            className="w-full px-4 py-3 bg-gray-800/50 text-white rounded-lg border-2 border-gray-700/50 focus:outline-none focus:border-purple-500 transition-all duration-300 font-medium cursor-pointer"
+            className="w-full px-4 py-3 bg-gray-800/50 text-white rounded-lg border-2 border-gray-700/50 focus:outline-none focus:border-orange-500 transition-all duration-300 font-medium cursor-pointer"
           >
             <option value="all">{getTranslation(language, 'allYears')}</option>
             {years.map(year => (
