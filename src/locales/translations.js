@@ -31,6 +31,7 @@ export const translations = {
     noImage: 'Sem Imagem',
     inList: '✓ Na Lista',
     watched: '👁️ Assistido',
+    votes: 'Votos',
     
     // Watchlist View
     emptyWatchlist: '📭 Sua watchlist está vazia',
@@ -86,6 +87,7 @@ export const translations = {
     noImage: 'No Image',
     inList: '✓ In List',
     watched: '👁️ Watched',
+    votes: 'Votes',
     
     // Watchlist View
     emptyWatchlist: '📭 Your watchlist is empty',

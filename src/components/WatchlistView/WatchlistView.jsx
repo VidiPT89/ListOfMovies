@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import MovieCard from '../MovieCard/MovieCard';
 import { getTranslation } from '../../locales/translations';
 
-const WatchlistView = ({ watchlist, getWatchedMovies, getUnwatchedMovies, onRemove, onToggleWatched, language }) => {
+const WatchlistView = ({ watchlist, getWatchedMovies, getUnwatchedMovies, onRemove, onToggleWatched, language, onMovieClick }) => {
   const watched = getWatchedMovies();
   const unwatched = getUnwatchedMovies();
 
@@ -71,6 +71,7 @@ const WatchlistView = ({ watchlist, getWatchedMovies, getUnwatchedMovies, onRemo
                 watched={false}
                 onToggleWatched={() => onToggleWatched(movie.id)}
                 language={language}
+                onMovieClick={onMovieClick}
               />
             ))}
           </motion.div>
@@ -108,6 +109,7 @@ const WatchlistView = ({ watchlist, getWatchedMovies, getUnwatchedMovies, onRemo
                 watched={true}
                 onToggleWatched={() => onToggleWatched(movie.id)}
                 language={language}
+                onMovieClick={onMovieClick}
               />
             ))}
           </motion.div>

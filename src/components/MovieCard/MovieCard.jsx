@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import movieService from '../../services/tmdbAPI';
 import { getTranslation } from '../../locales/translations';
 
-const MovieCard = ({ movie, onAddToWatchlist, onRemoveFromWatchlist, isInWatchlist, watched, onToggleWatched, language }) => {
+const MovieCard = ({ movie, onAddToWatchlist, onRemoveFromWatchlist, isInWatchlist, watched, onToggleWatched, language, onMovieClick }) => {
   const posterURL = movieService.getImageURL(movie.poster_path);
   const year = movie.release_date ? new Date(movie.release_date).getFullYear() : 'N/A';
   const rating = movie.vote_average ? movie.vote_average.toFixed(1) : 'N/A';
@@ -15,6 +15,7 @@ const MovieCard = ({ movie, onAddToWatchlist, onRemoveFromWatchlist, isInWatchli
       exit={{ opacity: 0, y: 20 }}
       transition={{ duration: 0.3 }}
       whileHover={{ y: -8 }}
+      onClick={() => onMovieClick(movie)}
       className="movie-card cursor-pointer"
     >
       <div className="relative overflow-hidden">

@@ -9,6 +9,7 @@ import LanguageToggle from './components/LanguageToggle/LanguageToggle';
 import SearchBar from './components/SearchBar/SearchBar';
 import FilterPanel from './components/FilterPanel/FilterPanel';
 import MovieCard from './components/MovieCard/MovieCard';
+import MovieModal from './components/MovieModal/MovieModal';
 import WatchlistView from './components/WatchlistView/WatchlistView';
 import './index.css';
 
@@ -22,6 +23,8 @@ function App() {
   const [selectedYear, setSelectedYear] = useState(null);
   const [searchQuery, setSearchQuery] = useState('');
   const [showSplash, setShowSplash] = useState(true);
+  const [selectedMovie, setSelectedMovie] = useState(null);
+  const [movieDetails, setMovieDetails] = useState(null);
 
   const { language, toggleLanguage } = useLanguage();
   
@@ -126,6 +129,23 @@ function App() {
 
   const handleToggleWatched = (movieId) => {
     toggleWatched(movieId);
+  };
+
+  const handleMovieClick = async (movie) => {
+    setSelectedMovie(movie);
+    try {
+      // Buscar detalhes completos do filme
+      const details = await movieService.getMovieDetails(movie.id);
+      setMovieDetails(details);
+    } catch (err) {
+      console.error('Erro ao carregar detalhes do filme:', err);
+      setMovieDetails(movie); // Fallback para dados básicos
+    }
+  };
+
+  const handleCloseModal = () => {
+    setSelectedMovie(null);
+    setMovieDetails(null);
   };
 
   return (
@@ -327,6 +347,7 @@ function App() {
                           watched={getWatchlistMovie(movie.id)?.watched || false}
                           onToggleWatched={() => handleToggleWatched(movie.id)}
                           language={language}
+                          onMovieClick={handleMovieClick}
                         />
                       ))}
                     </motion.div>
@@ -353,12 +374,26 @@ function App() {
                   onRemove={handleRemoveFromWatchlist}
                   onToggleWatched={handleToggleWatched}
                   language={language}
+                  onMovieClick={handleMovieClick}
                 />
               </motion.div>
             )}
           </AnimatePresence>
         </div>
       </motion.div>
+
+      {/* Movie Modal */}
+      <MovieModal
+        movie={movieDetails || selectedMovie}
+        isOpen={selectedMovie !== null}
+        onClose={handleCloseModal}
+        language={language}
+        onAddToWatchlist={handleAddToWatchlist}
+        onRemoveFromWatchlist={handleRemoveFromWatchlist}
+        isInWatchlist={selectedMovie ? isInWatchlist(selectedMovie.id) : false}
+        watched={selectedMovie ? (getWatchlistMovie(selectedMovie.id)?.watched || false) : false}
+        onToggleWatched={() => handleToggleWatched(selectedMovie?.id)}
+      />
     </>
   );
 }
